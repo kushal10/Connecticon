@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>CREATE ISSUE</title>
+<style>
+body{
+background-image: url("create.jpg");
+}
+.button{
+background-color:  #999966;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+	position: relative;
+    top: 63px;
+    left: 590px;}
+</style>
+</head>
+<body>
+<h2 style="text-align:center;font-family:mr de haviland,cursive;font-weight:bold;text-decoration: underline;"><strong>CREATE</strong></h2>
+<br><br><br>
+<form>
+<table>
+<tr><td><strong>ISSUE NAME:</strong></td> <td><input type ="text"  placeholder="ISSUE NAME" size="25" required=" "></td></tr>
+<tr><td><strong>DATE:</strong></td><td><input type ="date"  placeholder="DATE" size="25" required=" "></td></tr>
+<tr><td><strong>PROBLEM SINCE:</strong></td><td><input type ="text" placeholder="PROBLEM SINCE" size="25" required=" "></td></tr>
+<tr><td><strong>Channel Type:</strong><br></td>
+<td><select name="typechannel">
+<option value="Public">Public</option>  
+<option value="Private">Private</option>
+</select><br></td></tr>
+</table>
+<form>
+<table>
+<tr><td>
+<p><strong>DESCRIPTION:</strong></p><td>
+<td><textarea rows="4" cols="50"  placeholder="Describe issue here..."></textarea><td><br><br>
+</tr>
+</table>
+<form>
+<input class="button"type="button"  onclick="alert('successfully created')" value="CREATE">
+</form>
+</body>
+</html>

@@ -1,0 +1,325 @@
+
+<style type="text\css">
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+$grad1: #49a09d;
+$grad2: #5f2c82;
+
+$color-positive: $grad1;
+$color-negative: #A73030;
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 40px 20px 0;
+  
+  background: linear-gradient($grad1, $grad2);
+  background-repeat: no-repeat;
+  
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+  
+  @media (min-width: 640px) {
+    margin: 80px 40px 0;    
+  }
+}
+
+.serif {
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 0.05em;
+}
+
+.form--register {
+  width: 400px;
+  max-width: 95%;
+  margin: auto;
+  padding: 40px 20px;
+  
+  border: 1px solid white;
+  
+  @media (min-width: 640px) {
+    padding: 60px 40px;    
+  }
+}
+
+.form__instructions {
+  color: white;
+  text-align: right;
+  font-size: 12px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 20px;
+}
+
+legend {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  
+  @media (min-width: 640px) {
+    font-size: 1.7em;
+  }
+}
+
+.input-group {
+	display: inline-block;
+  width: 100%;
+  margin: 1.1em 0;
+  
+  position: relative;
+	z-index: 1;
+
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.input__field {
+display: block;
+  width: 100%;
+	padding: 0.8em;
+
+  position: relative;
+	float: right;
+
+  background: transparent;
+	border: 2px solid transparent;
+	border-radius: 0;
+	
+  font-weight: bold;
+	color: white;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+  
+  &.ng-dirty.ng-invalid {
+    box-shadow: 0 0 3px rgba($color-negative, 0.5);
+    border: 2px solid rgba($color-negative, 0.5);
+  }
+  &.ng-dirty.ng-valid {
+    &:not(.ng-empty) {
+      box-shadow: 0 0 3px rgba($color-positive, 0.5);
+      border: 2px solid rgba($color-positive, 0.5);
+    }
+  }
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+
+  position: absolute;
+  float: right;
+	
+  font-size: 70.25%;
+	font-weight: bold;
+	text-align: left;
+	color: white;
+	
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	user-select: none;
+	cursor: text;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+  
+	transform-origin: 0% 50%;
+	transition: transform 0.3s;
+}
+
+.graphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	fill: none;
+	stroke: white;
+	stroke-width: 4px;
+	stroke-dasharray: 962;
+	stroke-dashoffset: 558;
+
+  transform: scale3d(1, -1, 1);
+	transition: stroke-dashoffset 0.3s;
+
+  pointer-events: none;
+}
+
+
+.input__field:focus + .input__label,
+.ng-dirty + .input__label {
+	cursor: default;
+	pointer-events: none;
+}
+
+.input__field:focus + .input__label .graphic,
+.ng-dirty + .input__label .graphic {
+	stroke-dashoffset: 0;
+}
+
+.input__field:focus + .input__label .input__label-content,
+.ng-dirty + .input__label .input__label-content {
+	transform: scale3d(0.81, 0.81, 1) translate3d(0, -4em, 0);
+}
+
+.button--submit {
+  height: 45px;
+  margin-top: 20px;
+  padding: 8px 30px;
+
+  position: relative;
+
+  background: transparent;
+  border: 1px solid white;
+
+  text-transform: uppercase;
+  
+  overflow: hidden;
+  transition: 300ms ease all;
+  transition: box-shadow 300ms ease-in-out, color 300ms 0 ease-in-out, opacity 300ms ease-in-out;
+  
+  &:not(.disabled):not(.success):hover {
+    box-shadow: 0 0 40px 40px white inset;
+    color: $grad1;
+  }
+  
+  &:focus {
+    outline: 1px solid rgba(white, 0.5);
+  }
+
+  //Disabled styles when form not valid
+  &.disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		user-select: none;
+    border: 1px dashed white;
+	}
+  
+  //Styles for after form is sent
+  &.success {
+    cursor: not-allowed;
+    background: $color-positive;
+  }
+}
+
+.button--submit__label {
+  display: block;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;  
+}
+//Submit label shown by default
+.button--submit__default {
+  position: relative;
+
+  .success & {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+//Submit label shown on successful form submit
+.button--submit__success {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 100%, 0);
+  
+  font-size: 13px;
+
+  .success & {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+var app = angular.module('MyApp', []);
+
+app.controller('MainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+  $scope.showSuccess = false;
+  $scope.registerFormSubmitted = false;
+  
+  $scope.submitRegisterForm = function(user) {
+    console.log('in function submitRegisterForm()', user);
+    $scope.registerFormSubmitted = true;
+
+    //Simulate form submission
+    $timeout(function() {
+      $scope.showSuccess = true;
+    }, 500);
+  };
+  
+}]);
+</script>
+
+<body ng-app="MyApp">
+  <div class="wrap" ng-controller="MainCtrl">
+  
+    <form name="formRegister" class="form--register"
+            ng-submit="formRegister.$valid && !registerFormSubmitted && submitRegisterForm(user)" novalidate>
+        <fieldset>
+          <legend class="serif">Get on board!</legend>
+          
+          <div class="input-group" ng-class="{'input--filled' : user.name}">
+            <input class="input__field" id="formRegisterName" type="text" 
+                   ng-model="user.name" required>
+            <label class="input__label" for="formRegisterName">
+              <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                <path d="m0,0l404,0l0,77l-404,0l0,-77z"></path>
+              </svg>
+              <span class="input__label-content">First Name *</span>
+            </label>
+          </div>
+          
+          <div class="input-group" ng-class="{'input--filled' : user.email}">
+            <input class="input__field" id="formRegisterEmail" type="email" 
+                   ng-model="user.email" required>
+            <label class="input__label" for="formRegisterEmail">
+              <svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                <path d="m0,0l404,0l0,77l-404,0l0,-77z"></path>
+              </svg>
+              <span class="input__label-content">E-mail address *</span>
+            </label>
+          </div>
+        </fieldset>
+          <p class="form__instructions">Fields with * are required.</p>
+
+        <button class="button--submit"
+                ng-class="{'disabled' : !formRegister.$valid, 'success': showSuccess }"
+                type="submit">
+                <span class="button--submit__label button--submit__default">
+                  Submit
+                </span>
+                <span class="button--submit__label button--submit__success">
+                  <i class="fa fa-check"></i> Yay, success!
+                </span>
+        </button>
+      </form>
+    
+    </div>
+</body>

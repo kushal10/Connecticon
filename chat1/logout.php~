@@ -1,0 +1,7 @@
+<?php
+if(isset($_COOKIE['user']))
+   {
+     setcookie('user',"",1);
+     Header("Location: index.php");
+   }
+?>

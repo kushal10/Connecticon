@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang=''>
+<head>
+   
+   <title>CONNECTICON</title>
+
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+   <style>
+   @import url(http://fonts.googleapis.com/css?family=Raleway);
+   
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  
+}
+#cssmenu {
+  border-bottom: 3px solid #ddd;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+  top: 0.1px;
+  position:absolute;
+  width: 99.7%;
+  
+}
+#cssmenu ul {
+  background: #ffffff;
+  
+}
+#cssmenu > ul > li {
+  float: left;
+}
+
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+  
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 20px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: black;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom ;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+ 
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #ddd;
+}
+#wrap {
+  margin: 5px 0px;
+  display: inline-block;
+  position: relative;
+  height: 45px;
+  float: right;
+  padding: 0;
+  
+}
+input[type="text"] {
+  height: 40px;
+  font-size: 25px;
+  display: inline-block;
+  font-family: "Lato";
+  font-weight: 100;
+  border: none;
+  outline: none;
+  color: #555;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: relative;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+input[type="text"]:focus {
+  width: 200px;
+  z-index: 1;
+  cursor: text;
+}
+input[type="submit"] {
+  height: 47px;
+  width: 43px;
+  display: inline-block;
+  color:red;
+  float: right;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+  text-indent: -10000px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity .4s ease;
+} 
+  
+  
+  body {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-image: url('https://wapcr.surge.sh/0vdMnby.jpg');
+    background-color: #CCCCCC;
+  }
+  
+  #font {
+    font-family: "Shadows Into Light";
+    text-align: center;
+    font-size: 8rem;
+    color: #2C2416;
+	text-decoration: none;
+  
+  }
+  
+  .mdl-layout__content {
+    width: 100%;
+  }
+  
+  span.highlighted {
+    background-color: lightgreen;
+  }
+</style>
+</head>
+
+<body>
+
+<div id='cssmenu'>
+<ul>
+   <li><a href='check.php'>Connecticon</a></li>
+   <li><a href='channel.php'>Channels</a></li>
+   <li><a href='#'>Issues</a></li>
+   <li><a href='#'>News</a></li>
+   <li><a href='#'>Ideas</a></li>
+   <li><a href='#'>Radio</a></li>
+   <li><a href='about.html'class="header-text">About</a></li>
+   <li style="float:right;position:relative;"><a href='#'>Log out</a></li>
+   <li style="float:right;" id="wrap">
+  <form action="" autocomplete="on">
+  <input id="search" name="search" type="text" placeholder="Search ur channels"><input id="search_submit" value="search" type="submit">
+  </form>
+</li>
+</ul>
+</div>
+<div style="position:relative; top:-85px;">
+      <h1 id="font">ABOUT CONNECTICON</h1>
+ </div>
+ <h2 style="position:relative;" >Connecticon</h2><br>
+ <p><h3> Connecticon is a website that connects people. It is a place where people can interact with each other, by creating channels.
+         The channels can be public or private according to the necessity of the people.
+         People also get recommended about the channels according to the most visited priority.
+         </h3></p>
+ <p><h3> Here, people can even post their issues, thus get them resolved as soon as possible. 
+         People also get updated about the ongoing events in the college through our News page.
+     </h3></p>
+ <p> <h3> People can even share their views through the Radio page, where their literature, poems will be shared.
+          Thus this is a website that helps everyone to interact with their mates.
+         </h3> </p>
+</body>
+<html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
